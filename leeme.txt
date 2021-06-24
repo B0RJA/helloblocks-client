@@ -1,0 +1,8 @@
+Blockly:
+github         - https://github.com/google/blockly
+github samples - https://github.com/google/blockly-samples
+get started    - https://developers.google.com/blockly/guides/get-started/web
+npm            - https://www.npmjs.com/package/blockly
+
+Utilidades para crear bloques y generadores de codigo:
+https://developers.google.com/blockly/guides/create-custom-blocks/blockly-developer-tools
