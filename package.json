@@ -16,6 +16,7 @@
     "@vue/composition-api": "^1.0.0-beta.14",
     "avrgirl-arduino": "https://github.com/duinoapp/avrgirl-arduino.git#browser-port-forwarding",
     "blockly": "^5.20210325.1",
+    "copy-webpack-plugin": "^9.0.1",
     "core-js": "^3.6.5",
     "country-code-emoji": "^2.2.0",
     "dayjs": "^1.8.28",

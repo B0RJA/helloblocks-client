@@ -27,6 +27,10 @@
           <v-icon left>mdi-information</v-icon>
           About
         </v-btn>
+        <v-btn text dense to="/tools/blockly" class="mx-1">
+          <v-icon left>mdi-information</v-icon>
+          Blockly
+        </v-btn>
         <v-spacer/>
         <compile-btn bottom />
         <upload-btn bottom />
@@ -167,6 +171,11 @@ import CompileConsole from './components/program/console.vue';
 import Coffee from './components/coffee.vue';
 import ImportantUpdate from './components/general/important-update.vue';
 import { version } from '../package.json';
+import BlocklyComponent from './components/blockly/BlocklyComponent.vue'
+import './components/blockly/blocks/stocks';
+import './components/blockly/prompt';
+
+import BlocklyJS from 'blockly/javascript';
 
 export default {
   name: 'App',
