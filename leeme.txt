@@ -6,3 +6,11 @@ npm            - https://www.npmjs.com/package/blockly
 
 Utilidades para crear bloques y generadores de codigo:
 https://developers.google.com/blockly/guides/create-custom-blocks/blockly-developer-tools
+
+
+Deploy:
+https://cli.vuejs.org/guide/deployment.html
+
+Deploy en Render.com
+https://hellocompiler.onrender.com
+https://helloblocks.onrender.com
