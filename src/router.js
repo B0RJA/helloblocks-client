@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
+import Blockly from './views/Blockly.vue';
 
 Vue.use(Router);
 
@@ -64,7 +65,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "servers" */ './views/tools/Servers.vue'),
         },
         {
-          path: 'about',
+          path: '/about',
           name: 'about',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
@@ -72,6 +73,11 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
         },
       ],
+    },
+    {
+      path: '/blockly',
+      name: 'blockly',
+      component: Blockly,
     },
   ],
 });

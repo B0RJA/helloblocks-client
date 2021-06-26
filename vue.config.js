@@ -14,13 +14,6 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new IgnoreNotFoundExportPlugin({ include: /FeathersVuexPagination/ }),
-      // Copy over media resources from the Blockly package
-      new CopyPlugin([
-        {
-          from: path.resolve(__dirname, './node_modules/blockly/media'),
-          to: path.resolve(__dirname, 'dist/media')
-        }
-      ])
       new MonacoEditorPlugin({
         // https://github.com/Microsoft/monaco-editor-webpack-plugin#options
         languages: ['cpp', 'markdown'],

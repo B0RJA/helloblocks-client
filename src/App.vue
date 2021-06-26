@@ -15,19 +15,11 @@
           <v-icon left>mdi-code-braces</v-icon>
           Code
         </v-btn>
-        <v-btn text dense to="/tools/libraries" class="mx-1">
-          <v-icon left>mdi-book-open-variant</v-icon>
-          Libraries
-        </v-btn>
         <v-btn text dense to="/tools" class="mx-1">
           <v-icon left>mdi-wrench</v-icon>
           Tools
         </v-btn>
-        <v-btn text dense to="/tools/about" class="mx-1">
-          <v-icon left>mdi-information</v-icon>
-          About
-        </v-btn>
-        <v-btn text dense to="/tools/blockly" class="mx-1">
+        <v-btn text dense to="/blockly" class="mx-1">
           <v-icon left>mdi-information</v-icon>
           Blockly
         </v-btn>
@@ -159,6 +151,8 @@
 
 <script>
 import { mapMutations } from 'vuex';
+// import BlocklyJS from 'blockly/javascript';
+// import BlocklyComponent from './components/blockly/BlocklyComponent.vue';
 import BoardFooter from './components/boards/footer-btn.vue';
 import ServerFooter from './components/servers/footer-btn.vue';
 import SerialFooter from './components/serial/footer-btn.vue';
@@ -171,11 +165,8 @@ import CompileConsole from './components/program/console.vue';
 import Coffee from './components/coffee.vue';
 import ImportantUpdate from './components/general/important-update.vue';
 import { version } from '../package.json';
-import BlocklyComponent from './components/blockly/BlocklyComponent.vue'
-import './components/blockly/blocks/stocks';
-import './components/blockly/prompt';
-
-import BlocklyJS from 'blockly/javascript';
+// import './components/blockly/blocks/stocks';
+// import './components/blockly/prompt';
 
 export default {
   name: 'App',
