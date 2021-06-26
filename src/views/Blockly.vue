@@ -1,6 +1,6 @@
 <template>
   <v-main>
-  <div id="app">
+  <div id="canvas">
     <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
     <p id="code">
       <button v-on:click="showCode()">Show JavaScript</button>
@@ -18,7 +18,7 @@ import '../components/blockly/prompt';
 import BlocklyJS from '../../node_modules/blockly/javascript';
 
 export default {
-  name: 'app',
+  name: 'canvas',
   components: {
     BlocklyComponent,
   },
