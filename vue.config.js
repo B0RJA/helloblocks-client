@@ -1,3 +1,6 @@
+const path = require('path');
+const CopyPlugin = require('copy-webpack-plugin');
+
 const IgnoreNotFoundExportPlugin = require('ignore-not-found-export-webpack-plugin');
 const MonacoEditorPlugin = require('monaco-editor-webpack-plugin');
 const manifestJSON = require('./public/manifest.json');
@@ -17,6 +20,15 @@ module.exports = {
       new MonacoEditorPlugin({
         // https://github.com/Microsoft/monaco-editor-webpack-plugin#options
         languages: ['cpp', 'markdown'],
+      }),
+      new CopyPlugin({
+        // https://www.npmjs.com/package/copy-webpack-plugin
+        patterns: [
+          {
+            from: path.resolve(__dirname, './node_modules/blockly/media'),
+            to: path.resolve(__dirname, 'dist/media'),
+          },
+        ],
       }),
     ],
   },

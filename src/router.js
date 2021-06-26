@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Blockly from './views/Blockly.vue';
+// eslint-disable-next-line import/no-unresolved
+// import Blockly from './components/blockly/BlocklyComponents.vue';
 
 Vue.use(Router);
 
