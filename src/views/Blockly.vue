@@ -1,12 +1,10 @@
 <template>
-  <v-main>
-  <div id="canvas">
-    <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
-    <p id="code">
-      <button v-on:click="showCode()">Show JavaScript</button>
-      <pre v-html="code"></pre>
-    </p>
-  </div>
+  <v-main id="canvas">
+      <BlocklyComponent id="blockly" :options="options" ref="foo"></BlocklyComponent>
+      <p id="code">
+        <button v-on:click="showCode()">Show JavaScript</button>
+        <pre v-html="code"></pre>
+      </p>
   </v-main>
 </template>
 
@@ -85,7 +83,7 @@ export default {
 </script>
 
 <style>
-#app {
+#canvas {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
