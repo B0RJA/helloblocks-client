@@ -6,6 +6,10 @@ const MonacoEditorPlugin = require('monaco-editor-webpack-plugin');
 const manifestJSON = require('./public/manifest.json');
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production'
+    ? '/helloblocks/'
+    : '/',
+
   chainWebpack: (config) => {
     config.module
       .rule('raw')
