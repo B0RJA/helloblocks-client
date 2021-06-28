@@ -7,7 +7,8 @@ const manifestJSON = require('./public/manifest.json');
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/helloblocks/'
+  //    ? '/helloblocks/' for Github deploy
+    ? '/'
     : '/',
 
   chainWebpack: (config) => {
