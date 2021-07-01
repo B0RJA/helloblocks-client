@@ -23,6 +23,9 @@
           <v-icon left>mdi-information</v-icon>
           Blockly
         </v-btn>
+        <v-btn text dense @click="toggleSerialShelf">
+          <v-icon left>mdi-thumb-up</v-icon>
+        </v-btn>
         <v-spacer/>
         <compile-btn bottom />
         <upload-btn bottom />

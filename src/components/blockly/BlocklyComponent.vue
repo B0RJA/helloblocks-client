@@ -10,6 +10,7 @@
 
 <script>
 import Blockly from 'blockly';
+import './blocklyapi';
 
 export default {
   name: 'BlocklyComponent',

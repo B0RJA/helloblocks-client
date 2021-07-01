@@ -1,23 +1,4 @@
-<template>
-  <v-container id="blocklyCanvas">
-    <BlocklyComponent id="blockly1" :options="options" ref="foo"></BlocklyComponent>
-    <p id="code">
-      <button v-on:click="showCode()">Show JavaScript</button>
-      <pre v-html="code"></pre>
-    </p>
-  </v-container>
-</template>
-
-<script>
-import BlocklyComponent from '../components/blockly/BlocklyComponent.vue';
-import '../components/blockly/blocks/stocks';
-import '../components/blockly/prompt';
-import BlocklyJS from '../../node_modules/blockly/javascript';
-import '../components/blockly/blocklyapi';
-
-const options = {
-  toolbox:
-`<xml id="toolbox" style="display: none">
+<xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
   <category name="Logic" colour="#5b80a5">
     <block type="controls_if"></block>
     <block type="logic_compare">
@@ -371,89 +352,8 @@ const options = {
       </value>
     </block>
   </category>
+  <category name="test"></category>
   <sep></sep>
   <category name="Variables" colour="#a55b80" custom="VARIABLE"></category>
   <category name="Functions" colour="#995ba5" custom="PROCEDURE"></category>
-  <sep></sep>
-  <category name="HelloBlocks" colour="%{BKY_LOOPS_HUE}">
-    <block type="stock_buy_simple"></block>
-    <block type="stock_buy_prog"></block>
-    <block type="stock_fetch_price"></block>
-  </category>
-</xml>`,
-  collapse: true,
-  comments: true,
-  disable: false,
-  maxBlocks: Infinity,
-  trashcan: true,
-  horizontalLayout: false,
-  toolboxPosition: 'start',
-  css: true,
-  rtl: false,
-  scrollbars: true,
-  sounds: true,
-  oneBasedIndex: true,
-  zoom: {
-    controls: false,
-    wheel: true,
-    startScale: 1,
-    maxScale: 3,
-    minScale: 0.3,
-    scaleSpeed: 1.05,
-  },
-  media: 'media/',
-  grid: {
-    spacing: 15, length: 2, colour: '#a2c9d4', snap: true,
-  },
-};
-
-export default {
-  name: 'app',
-  components: {
-    BlocklyComponent,
-  },
-  data() {
-    return {
-      code: '',
-      options,
-    };
-  },
-  methods: {
-    showCode() {
-      this.code = BlocklyJS.workspaceToCode(this.$refs.foo.workspace);
-    },
-  },
-};
-</script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-html, body {
-  margin: 0;
-}
-#code {
-  position: absolute;
-  right:  0;
-  top:    0;
-  width:  30%;
-  height: 100%;
-  margin: 0;
-  background-color: beige;
-  z-index: 1;
-  padding: 48px 0px 41px;
-}
-#blockly1 {
-  position: absolute;
-  left:   0;
-  top: 0;
-  width:  70%;
-  height: 100%;
-  z-index: 1;
-  padding: 48px 0px 41px;
-}
-</style>
+</xml>
