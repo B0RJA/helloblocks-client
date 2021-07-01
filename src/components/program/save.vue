@@ -1,7 +1,7 @@
 <template>
       <span v-on="on">
-        <v-btn icon text @click="run" :disabled="!valid">
-          <v-icon>mdi-thumb-up</v-icon>
+        <v-btn icon desne @click="run">
+          <v-icon left>mdi-content-save</v-icon>
         </v-btn>
       </span>
 </template>

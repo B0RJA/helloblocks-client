@@ -23,9 +23,7 @@
           <v-icon left>mdi-information</v-icon>
           Blockly
         </v-btn>
-        <v-btn text dense @click="toggleSerialShelf">
-          <v-icon left>mdi-thumb-up</v-icon>
-        </v-btn>
+        <save-btn bottom />
         <v-spacer/>
         <compile-btn bottom />
         <upload-btn bottom />
@@ -45,7 +43,7 @@
       app
       absolue
       bottom
-      @input="toggleSerialShelf($event)"
+      @input="saveBlocklyCanvas($event)"
     >
       <div>
         <div>
@@ -162,6 +160,7 @@ import SerialFooter from './components/serial/footer-btn.vue';
 import SerialPrompts from './components/serial/prompts.vue';
 import SerialMonitor from './components/serial/monitor.vue';
 import SerialPlotter from './components/serial/plotter.vue';
+import SaveBtn from './components/program/save.vue';
 import CompileBtn from './components/program/compile.vue';
 import UploadBtn from './components/program/upload.vue';
 import CompileConsole from './components/program/console.vue';
@@ -180,6 +179,7 @@ export default {
     SerialFooter,
     SerialMonitor,
     SerialPlotter,
+    SaveBtn,
     CompileBtn,
     CompileConsole,
     UploadBtn,
