@@ -43,7 +43,7 @@
       app
       absolue
       bottom
-      @input="saveBlocklyCanvas($event)"
+      @input="toggleSerialShelf($event)"
     >
       <div>
         <div>
@@ -78,7 +78,7 @@
       <v-row style="display: contents;">
         <div style="line-height: 28px;">
           <small>
-            Duino App
+            HelloBlocks App
             &copy;
             {{ (new Date()).getFullYear() }}
             &dash;
@@ -194,6 +194,7 @@ export default {
     };
   },
   methods: {
+    // Bypassed for testing in Firefox
     ...mapMutations(['toggleSerialShelf', 'setSerialTab']),
     checkSerialReady() {
       if (this.$serial) this.serialReady = true;

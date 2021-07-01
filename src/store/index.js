@@ -26,6 +26,7 @@ const store = new Vuex.Store({
     currentBoard: window.localStorage.currentBoard || '51b2904f-b7fd-3df8-9330-0ef1b852b816',
     currentProject: window.localStorage.currentProject || null,
     currentFile: window.localStorage.currentFile || null,
+    blocklySaved: false,
   },
   mutations: {
     toggleSerialShelf(state, val) {
@@ -53,6 +54,9 @@ const store = new Vuex.Store({
       window.localStorage.currentFile = uuid;
       state.currentFile = uuid;
     },
+    setBlocklySaved(state, val) {
+      state.blocklySaved = typeof val === 'boolean' ? val : !state.serialShelf;
+    },
   },
   getters: {
     serialShelf(state) { return state.serialShelf; },
@@ -62,6 +66,7 @@ const store = new Vuex.Store({
     currentBoard(state) { return state.currentBoard; },
     currentProject(state) { return state.currentProject; },
     currentFile(state) { return state.currentFile; },
+    currentBlocklySaved(state) { return state.blocklySaved; },
   },
   actions: {
 

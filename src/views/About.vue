@@ -1,10 +1,10 @@
 <template>
   <v-row class="pa-4" align="center">
     <v-col cols="12">
-      <h1>Duino App</h1>
+      <h1>HelloBlocks App</h1>
       <h4>Version: {{version}}</h4>
       <p>
-        Duino App is a web-based programing interface for programming microcontrollers,
+        HelloBlocks based in Duino.App is a web-based programing interface for programming microcontrollers,
         like an Arduino or ESP, and proxies process of compiling/uploading code from a remote server to the client.
       </p>
       <h3>This is cool, how can I help support it?</h3>

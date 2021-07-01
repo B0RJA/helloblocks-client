@@ -9,6 +9,7 @@
 </template>
 
 <script>
+// import { mapMutations, mapGetters, mapState } from 'vuex';
 import BlocklyComponent from '../components/blockly/BlocklyComponent.vue';
 import '../components/blockly/blocks/stocks';
 import '../components/blockly/prompt';
@@ -408,7 +409,7 @@ const options = {
 };
 
 export default {
-  name: 'app',
+  name: 'BlocklyView',
   components: {
     BlocklyComponent,
   },
@@ -418,7 +419,13 @@ export default {
       options,
     };
   },
+  computed: {
+    //    ...mapGetters(['currentBlocklySaved']),
+    //    ...mapState(['blocklySaved']),
+  },
   methods: {
+    //    ...mapMutations(['currentBlocklySaved']),
+
     showCode() {
       this.code = BlocklyJS.workspaceToCode(this.$refs.foo.workspace);
     },
@@ -427,12 +434,6 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
 html, body {
   margin: 0;
 }

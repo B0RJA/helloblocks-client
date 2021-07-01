@@ -1,55 +1,37 @@
 <template>
-      <span v-on="on">
+      <span>
         <v-btn icon desne @click="run">
-          <v-icon left>mdi-content-save</v-icon>
+          <v-icon center>mdi-content-save</v-icon>
         </v-btn>
       </span>
 </template>
 
 <script>
+// import { mapState, mapMutations } from 'vuex';
 import { mapMutations } from 'vuex';
+// import BlocklyView from '../../views/Blockly.vue';
 
 export default {
   props: {
-    top: {
-      type: Boolean,
-      default: true,
-    },
-    bottom: {
-      type: Boolean,
-      default: false,
-    },
   },
   computed: {
-    currentServer() {
-      const { Server } = this.$FeathersVuex.api;
-      return Server.findInStore({ query: { uuid: this.$store.getters.currentServer } }).data[0];
-    },
-    currentBoard() {
-      const { Board } = this.$FeathersVuex.api;
-      return Board.findInStore({ query: { uuid: this.$store.getters.currentBoard } }).data[0];
-    },
-    currentProject() {
-      const { Project } = this.$FeathersVuex.api;
-      return Project.findInStore({ query: { uuid: this.$store.getters.currentProject } }).data[0];
-    },
-    valid() {
-      return !!(this.currentServer
-        && this.currentBoard
-        && this.currentProject);
-    },
+
   },
   methods: {
-    ...mapMutations(['toggleSerialShelf', 'setSerialTab']),
+    // ...mapMutations(['setBlocklySaved', 'setCurrentFile']),
+    ...mapMutations(['setBlocklySaved']),
     run() {
-      this.toggleSerialShelf(false);
-      this.setSerialTab('monitor');
-      setTimeout(() => {
-        this.toggleSerialShelf(true);
-        this.setSerialTab('program');
-        this.$compiler.compile();
-      }, 0);
+      this.setBlocklySaved(true);
+
+      // Show code
+      // BlocklyView.showCode();
+
+      // eslint-disable-next-line no-console
+      console.log('blockly saved');
     },
   },
 };
+// eslint-disable-next-line no-console
+// console.log(mapState(['blocklySaved']));
+
 </script>

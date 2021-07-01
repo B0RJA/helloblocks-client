@@ -1,6 +1,6 @@
 {
-  "name": "duino.app",
-  "short_name": "duino.app",
+  "name": "HelloBlocks",
+  "short_name": "helloblocks",
   "icons": [
     {
       "src": "./img/icons/android-chrome-192x192.png",

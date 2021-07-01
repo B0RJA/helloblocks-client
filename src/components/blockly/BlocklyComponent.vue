@@ -2,13 +2,13 @@
   <div>
     <div class="blocklyDiv" ref="blocklyDiv">
     </div>
-    <xml ref="blocklyToolbox" style="display:none">
-      <slot></slot>
-    </xml>
+    <div ref="blocklyToolbox" style="display:none">
+    </div>
   </div>
 </template>
 
 <script>
+// import { mapMutations, mapGetters, mapState } from 'vuex';
 import Blockly from 'blockly';
 import './blocklyapi';
 
@@ -27,6 +27,15 @@ export default {
     }
     this.workspace = Blockly.inject(this.$refs.blocklyDiv, options);
   },
+  computed: {
+    // ...mapGetters(['currentBlocklySaved']),
+    // ...mapState(['blocklySaved']),
+  },
+
+  methods: {
+    // ...mapMutations(['currentBlocklySaved']),
+  },
+
 };
 </script>
 
