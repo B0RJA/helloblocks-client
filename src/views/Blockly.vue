@@ -1,10 +1,12 @@
 <template>
   <v-container id="blocklyCanvas">
     <BlocklyComponent id="blockly1" :options="options" ref="foo"></BlocklyComponent>
+    <!--
     <p id="code">
       <button v-on:click="showCode()">Show JavaScript</button>
       <pre v-html="code"></pre>
     </p>
+    -->
   </v-container>
 </template>
 
@@ -452,7 +454,7 @@ html, body {
   position: absolute;
   left:   0;
   top: 0;
-  width:  70%;
+  width:  100%;
   height: 100%;
   z-index: 1;
   padding: 48px 0px 41px;

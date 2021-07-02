@@ -23,6 +23,7 @@
         </v-icon>
         Board Selected
       </span>
+      <!--
       <br>
       <span :class="{ 'error--text': !this.currentProject, 'success--text': !!this.currentProject }">
         <v-icon :color="this.currentProject ? 'success' : 'error'" small>
@@ -30,6 +31,7 @@
         </v-icon>
         Project Selected
       </span>
+      -->
     </div>
   </v-tooltip>
 </template>
@@ -58,8 +60,9 @@ export default {
       return Board.findInStore({ query: { uuid: this.$store.getters.currentBoard } }).data[0];
     },
     currentProject() {
-      const { Project } = this.$FeathersVuex.api;
-      return Project.findInStore({ query: { uuid: this.$store.getters.currentProject } }).data[0];
+      // const { Project } = this.$FeathersVuex.api;
+      // return Project.findInStore({ query: { uuid: this.$store.getters.currentProject } }).data[0];
+      return true;
     },
     valid() {
       return !!(this.currentServer

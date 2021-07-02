@@ -2,6 +2,7 @@ import EventEmitter from 'events';
 import omit from 'lodash/omit';
 import store from '../store';
 import { genId } from '../store/tools';
+import BlocklyJS from '../../node_modules/blockly/javascript';
 
 class CompileServer extends EventEmitter {
   constructor() {
@@ -193,18 +194,25 @@ class CompileServer extends EventEmitter {
   async compile(mod = 2, logErr = true) {
     this.emit('console.clear');
     // await this._setSketch();
-    const project = store.getters['projects/find']({ query: { uuid: store.getters.currentProject } }).data[0];
-    const files = store.getters['files/find']({ query: { projectId: project.uuid } }).data
-      .map((f) => ({ content: f.body, name: `${project.ref}/${f.name}` }));
-    this.emit('console.progress', { percent: 0, message: 'Initialising Libraries...' });
-    const libs = await this._getLibs(project);
-    if (libs.length) {
-      await this.serverReq('libraries/cache', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ libs }),
-      });
-    }
+    // const project = store.getters['projects/find']({ query: { uuid: store.getters.currentProject } }).data[0];
+    // const files = store.getters['files/find']({ query: { projectId: project.uuid } }).data
+    //   .map((f) => ({ content: f.body, name: `${project.ref}/${f.name}` }));
+    // eslint-disable-next-line no-console
+    console.log(BlocklyJS.workspaceToCode(null));
+    const files = [{
+      content: BlocklyJS.workspaceToCode(null),
+      name: 'a/a.ino',
+    }];
+    // this.emit('console.progress', { percent: 0, message: 'Initialising Libraries...' });
+    // const libs = await this._getLibs(project);
+    // if (libs.length) {
+    //   await this.serverReq('libraries/cache', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify({ libs }),
+    //   });
+    // }
+    const libs = []; // TODO Add libs!
     this.emit('console.progress', { percent: 0.25 * mod, message: 'Compiling code...' });
     const req = {
       fqbn: this._getFqbn(),
